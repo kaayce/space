@@ -1,13 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "group:all"],
+  "extends": [
+    "config:base",
+    "group:all"
+  ],
   "major": {
     "enabled": false
   },
   "updatePinnedDependencies": false,
   "stabilityDays": 2,
-  "timezone": "Asia/Jakarta",
-  "schedule": ["before 1am on Monday"],
+  "timezone": "America/Vancouver",
+  "schedule": [
+    "before 1am on Monday"
+  ],
   "rangeStrategy": "bump",
-  "ignoreDeps": ["node", "pnpm"]
+  "ignoreDeps": [
+    "node",
+    "pnpm"
+  ]
 }

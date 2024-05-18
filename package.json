@@ -1,8 +1,8 @@
 {
-  "name": "nextarter-chakra",
+  "name": "kayce-space",
   "version": "0.1.0",
   "private": true,
-  "author": "sozonome",
+  "author": "kaayce",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
