@@ -1,5 +1,7 @@
+import { CSSReset } from '@chakra-ui/react';
 import type { Metadata, Viewport } from 'next';
 
+import { inter } from '~/app/fonts';
 import Providers from '~/app/providers';
 import Layout from '~/lib/layout';
 
@@ -44,9 +46,10 @@ export const viewport: Viewport = {
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body>
         <Providers>
+          <CSSReset />
           <Layout>{children}</Layout>
         </Providers>
       </body>
