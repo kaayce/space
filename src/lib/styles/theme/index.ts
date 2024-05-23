@@ -23,6 +23,7 @@ const customTheme = extendTheme({
       },
       body: {
         width: '100%',
+        bgGradient: 'linear(to-r, #0D1724, #05051e)',
         // backgroundColor: '#05051e',
         // color: 'white',
       },
