@@ -23,8 +23,8 @@ const customTheme = extendTheme({
       },
       body: {
         width: '100%',
-        backgroundColor: '#0D1724',
-        color: 'white',
+        // backgroundColor: '#0D1724',
+        // color: 'white',
       },
       '#__next': {
         height: '100%',

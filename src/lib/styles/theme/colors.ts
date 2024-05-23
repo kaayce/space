@@ -26,4 +26,13 @@ const overridenChakraColors: DeepPartial<Theme['colors']> = {};
 export const colors = {
   ...overridenChakraColors,
   ...extendedColors,
+  // primary: {
+  //   dark: '#0D1724',
+  //   light: '#e6f6e6',
+  // },
+  // secondary: '#009400',
+  // text: {
+  //   dark: '#000',
+  //   light: '#fff',
+  // },
 };

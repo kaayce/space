@@ -9,11 +9,11 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-const APP_NAME = 'nextarter-chakra';
+const APP_NAME = 'Patrick Nzediegwu';
 
 export const metadata: Metadata = {
-  title: { default: APP_NAME, template: '%s | nextarter-chakra' },
-  description: 'Next.js + chakra-ui + TypeScript template',
+  title: { default: APP_NAME, template: '%s | Patrick Nzediegwu' },
+  description: 'My professional space',
   applicationName: APP_NAME,
   appleWebApp: {
     capable: true,
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: 'https://kayce.space',
     title: 'Patrick Nzediegwu',
-    description: 'My personal site',
+    description: 'My professional space',
     images: {
       url: 'https://og-image.sznm.dev/**nextarter-chakra**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250',
       alt: 'nextarter-chakra.sznm.dev og-image',
