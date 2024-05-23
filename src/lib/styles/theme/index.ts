@@ -23,7 +23,7 @@ const customTheme = extendTheme({
       },
       body: {
         width: '100%',
-        // backgroundColor: '#0D1724',
+        // backgroundColor: '#05051e',
         // color: 'white',
       },
       '#__next': {

@@ -17,6 +17,7 @@ const extendedColors: DeepPartial<
   },
   gray: {
     600: '#333',
+    800: '#05051e',
   },
 };
 
@@ -27,7 +28,7 @@ export const colors = {
   ...overridenChakraColors,
   ...extendedColors,
   // primary: {
-  //   dark: '#0D1724',
+  //   dark: '#05051e',
   //   light: '#e6f6e6',
   // },
   // secondary: '#009400',
