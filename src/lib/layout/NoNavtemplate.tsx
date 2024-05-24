@@ -1,14 +1,16 @@
-import { Box, chakra } from '@chakra-ui/react';
+import { Box, chakra, Container } from '@chakra-ui/react';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 
 import MotionBox from '~/lib/components/motion/Box';
 
-const Wrapper = chakra(Box, {
+const Wrapper = chakra(Container, {
   baseStyle: {
     display: 'flex',
     flexDirection: 'column',
     height: '100%',
+    maxW: '1280',
+    position: 'relative',
   },
 });
 
