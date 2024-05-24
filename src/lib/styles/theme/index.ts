@@ -16,6 +16,22 @@ const customTheme = extendTheme({
     extrabold: 900,
     black: 1000,
   },
+  semanticTokens: {
+    colors: {
+      'chakra-body-bg': {
+        _dark: '#05051e',
+        default: '#e6f6e6',
+      },
+      // secondary: {
+      //   default: '#009400',
+      //   _dark: 'red.700',
+      // },
+      'chakra-body-text': {
+        _dark: '#000',
+        light: '#fff',
+      },
+    },
+  },
   styles: {
     global: () => ({
       html: {
@@ -23,9 +39,6 @@ const customTheme = extendTheme({
       },
       body: {
         width: '100%',
-        bgGradient: 'linear(to-r, #0D1724, #05051e)',
-        // backgroundColor: '#05051e',
-        // color: 'white',
       },
       '#__next': {
         height: '100%',
