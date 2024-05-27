@@ -22,14 +22,14 @@ const customTheme = extendTheme({
         _dark: '#05051e',
         default: '#e6f6e6',
       },
+      'chakra-body-text': {
+        _dark: '#fff',
+        _light: '#000',
+      },
       // secondary: {
       //   default: '#009400',
       //   _dark: 'red.700',
       // },
-      'chakra-body-text': {
-        _dark: '#000',
-        light: '#fff',
-      },
     },
   },
   styles: {
