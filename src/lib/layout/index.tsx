@@ -2,17 +2,20 @@
 
 import { Box } from '@chakra-ui/react';
 import { usePathname } from 'next/navigation';
-import type { ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 
+import Scroller from '~/lib/components/blocks/Scroller';
+import Header from '~/lib/layout/Header';
+import Nav from '~/lib/layout/Nav';
 import NoNavTemplate from '~/lib/layout/NoNavtemplate';
-
-import Header from './Header';
 
 type LayoutProps = {
   children: ReactNode;
 };
 
 const Layout = ({ children }: LayoutProps) => {
+  const [section, setSection] = useState(0);
+
   const pathname = usePathname();
 
   const noNavPaths = pathname === '/';
@@ -20,11 +23,16 @@ const Layout = ({ children }: LayoutProps) => {
   if (!noNavPaths) return null;
 
   return (
-    // <Box margin="0 auto" maxWidth={800} transition="0.5s ease-out">
     <NoNavTemplate>
-      <Header />
-      <Box as="main" marginY={22}>
-        {children}
+      <Nav />
+      <Box
+        display="flex"
+        flexDirection={{ base: 'column', lg: 'row' }}
+        justifyContent={{ lg: 'space-between' }}
+        gap={{ base: 6, lg: 4 }}
+      >
+        <Header section={section} />
+        <Scroller setSection={setSection}>{children}</Scroller>
       </Box>
     </NoNavTemplate>
   );

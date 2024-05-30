@@ -11,24 +11,27 @@ const Wrapper = chakra(Container, {
     height: '100%',
     maxW: '1280',
     position: 'relative',
+    mx: 'auto',
+    minH: '100vh',
+    px: { base: 6, md: 12, lg: 16 },
+    py: { base: 8, md: 12, lg: 10 },
   },
 });
 
-const Main = chakra(MotionBox, {
+const Content = chakra(MotionBox, {
   baseStyle: (props) => ({
     position: 'relative',
     zIndex: props.theme.zIndices.main,
     display: 'flex',
     flexDirection: 'column',
     flex: '1 0 auto',
-    margin: '16px',
   }),
 });
 
 function NoNavTemplate({ children }: { children: ReactNode }): JSX.Element {
   return (
     <Wrapper>
-      <Main>{children}</Main>
+      <Content>{children}</Content>
       <Box position="absolute" top={0} right={2} zIndex={-5}>
         <Image
           src="/bg-grid-lighter.svg"
