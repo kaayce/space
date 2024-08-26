@@ -1,41 +1,45 @@
-import { Box, Text, VStack, Circle } from '@chakra-ui/react';
+/* eslint-disable react/no-unescaped-entities */
+import { Box, Text, VStack, Flex, Hide } from '@chakra-ui/react';
+
+import Circle from '~/lib/components/Circle';
+import Contact from '~/lib/components/Contact';
 
 const Hero = () => {
   return (
-    <VStack align="start" spacing={4}>
-      <Box position="relative" width="full" textAlign="center">
-        <Text
-          position="absolute"
-          left="0"
-          top="0"
-          transform="rotate(-15deg)"
-          fontSize="xl"
-          fontWeight="bold"
-        >
-          Hello👋🏿
+    <Flex align="start" p={4}>
+      <Hide below="lg">
+        <VStack>
+          <Circle />
+          <Contact />
+        </VStack>
+      </Hide>
+      <Box width="1px" bg="gray.300" mr={6} alignSelf="stretch" />
+      <VStack align="start" spacing={4} fontSize={{ md: 'md', lg: 'lg' }}>
+        <Text fontStyle="italic">
+          "I'm a versatile software engineer with over 7 years of experience in
+          designing and implementing high-traffic, scalable web applications. My
+          expertise spans both frontend and backend development, with a focus on
+          building resilient and performant applications."
         </Text>
-        <Circle
-          size="100px"
-          borderWidth={2}
-          borderColor="green.400"
-          position="absolute"
-          left="5%"
-          top="15%"
-        />
-      </Box>
-      <Text fontSize="xl">
-        Since 2016, I have been developing software and leading collaborative
-        teams to deliver successful product launches for startups and
-        enterprises. With expertise in JavaScript, TypeScript, Java, SQL, and
-        Python, I have built software for advertising agencies, startups,
-        corporations, and digital product studios.
-      </Text>
-      <Text fontSize="xl">
-        When I am not at the computer, I am usually rock climbing, reading,
-        hanging out with my wife and two cats, or running around Hyrule
-        searching for Korok seeds.
-      </Text>
-    </VStack>
+        <Hide below="lg">
+          <Text fontStyle="italic">
+            "I work with a wide range of technologies including Go, TypeScript,
+            React, Node.js, GraphQL, and AWS, among others. Whether it's
+            creating micro-frontends architectures, building distributed
+            systems, or optimizing CI/CD pipelines, I thrive on solving complex
+            problems and driving innovation."
+          </Text>
+          <Text fontStyle="italic">
+            "In addition to my technical skills, I'm passionate about mentoring
+            and empowering teams, fostering a collaborative environment where
+            everyone can grow and succeed."
+          </Text>
+        </Hide>
+        {/* <Hide below="sm"> */}
+        {/* <Contact /> */}
+        {/* </Hide> */}
+      </VStack>
+    </Flex>
   );
 };
 

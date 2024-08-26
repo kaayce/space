@@ -8,8 +8,7 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { CiMail } from 'react-icons/ci';
-import { FaLinkedinIn } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   const dividerColor = useColorModeValue('gray.900', 'primary.text');
@@ -31,14 +30,22 @@ const Contact = () => {
             <Text>LinkedIn</Text>
           </Flex>
         </Link>
+        <Link href="https://github.com/kaayce" isExternal mx={2}>
+          <Flex align="center">
+            <Icon as={FaGithub} w={6} h={6} m={1} />
+            <Text>Github</Text>
+          </Flex>
+        </Link>
         <Divider borderColor={dividerColor} flex={2} />
       </Flex>
       <Flex align="center" w="full">
-        <Divider borderColor="gray.400" flex={1} />
-        <Flex align="center" mx={2}>
-          <Icon as={CiMail} w={6} h={6} m={1} />
-          <Text>info@example.com</Text>
-        </Flex>
+        <Divider borderColor={dividerColor} flex={1} />
+        <Link href="email:pat.nzediegwu@gmail.com" mx={2}>
+          <Flex align="center" mx={2}>
+            <Icon as={FaEnvelope} w={6} h={6} m={1} />
+            <Text>Email</Text>
+          </Flex>
+        </Link>
       </Flex>
     </Flex>
   );

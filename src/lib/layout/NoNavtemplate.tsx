@@ -14,13 +14,13 @@ const Wrapper = chakra(Box, {
     maxW: '1280px',
     flexWrap: 'wrap',
     flex: 1,
-    px: { base: 4, md: 6, lg: 8 },
     py: 4,
   },
 });
 
 const ContentItem = chakra(MotionBox, {
   baseStyle: {
+    px: { base: 4, md: 6, lg: 8 },
     flex: '1 1 auto',
   },
 });

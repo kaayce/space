@@ -4,7 +4,7 @@ import ThemeToggle from './ThemeToggle';
 
 const Nav = () => {
   return (
-    <Flex as="header" width="full" align="center">
+    <Flex as="nav" width="full" p="1em">
       <Box marginLeft="auto">
         <ThemeToggle />
       </Box>
