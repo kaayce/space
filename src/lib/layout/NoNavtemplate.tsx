@@ -1,43 +1,42 @@
-import { Box, chakra, Container } from '@chakra-ui/react';
+import { Box, chakra } from '@chakra-ui/react';
 import Image from 'next/image';
 import type { ReactNode } from 'react';
 
 import MotionBox from '~/lib/components/motion/Box';
+import Nav from '~/lib/layout/Nav';
 
-const Wrapper = chakra(Container, {
+const Wrapper = chakra(Box, {
   baseStyle: {
     display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-    maxW: '1280',
-    position: 'relative',
+    minHeight: '100dvh',
+    width: '100%',
     mx: 'auto',
-    minH: '100vh',
-    px: { base: 6, md: 12, lg: 16 },
-    py: { base: 8, md: 12, lg: 10 },
+    maxW: '1280px',
+    flexWrap: 'wrap',
+    flex: 1,
+    px: { base: 4, md: 6, lg: 8 },
+    py: 4,
   },
 });
 
-const Content = chakra(MotionBox, {
-  baseStyle: (props) => ({
-    position: 'relative',
-    zIndex: props.theme.zIndices.main,
-    display: 'flex',
-    flexDirection: 'column',
-    flex: '1 0 auto',
-  }),
+const ContentItem = chakra(MotionBox, {
+  baseStyle: {
+    flex: '1 1 auto',
+  },
 });
 
 function NoNavTemplate({ children }: { children: ReactNode }): JSX.Element {
   return (
     <Wrapper>
-      <Content>{children}</Content>
-      <Box position="absolute" top={0} right={2} zIndex={-5}>
+      <Nav />
+      <ContentItem>{children}</ContentItem>
+      <Box position="fixed" top={0} right={0} zIndex={-1} overflow="hidden">
         <Image
           src="/bg-grid-lighter.svg"
-          alt="Error background image not found"
+          alt="Background grid"
           width={500}
           height={500}
+          style={{ opacity: 0.7 }}
         />
       </Box>
     </Wrapper>
