@@ -1,16 +1,28 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "globalDependencies": [
+    "$schema"
+  ],
+  "tasks": {
     "build": {
-      "outputs": [".next/**", "!.next/cache/**", "public/**"],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "public/**"
+      ],
       "env": []
     },
     "lint": {
       "outputs": [],
-      "inputs": [".eslintrc.*", "src/**"]
+      "inputs": [
+        ".eslintrc.*",
+        "src/**"
+      ]
     },
     "type-check": {
-      "outputs": ["*.tsbuildinfo"]
+      "outputs": [
+        "*.tsbuildinfo"
+      ]
     }
   }
 }
