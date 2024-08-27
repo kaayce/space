@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import { type ReactNode } from 'react';
 
+import Footer from '~/lib/layout/Footer';
 import Header from '~/lib/layout/Header';
 import NoNavTemplate from '~/lib/layout/NoNavtemplate';
 
@@ -21,6 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
     <NoNavTemplate>
       <Header />
       {children}
+      <Footer />
     </NoNavTemplate>
   );
 };
