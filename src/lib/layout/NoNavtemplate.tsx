@@ -33,6 +33,7 @@ function NoNavTemplate({ children }: { children: ReactNode }): JSX.Element {
       <ContentItem>{children}</ContentItem>
       <Box position="fixed" top={0} right={0} zIndex={-1} overflow="hidden">
         <Image
+          priority
           src="/bg-grid-lighter.svg"
           alt="Background grid"
           width={500}
