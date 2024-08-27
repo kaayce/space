@@ -22,6 +22,7 @@ const customTheme = extendTheme({
         _dark: '#05051e',
         default: '#05051e',
         _light: '#fff',
+        // f0fff0
         // _dark: '#05051e',
         // default: '#e6f6e6',
       },
