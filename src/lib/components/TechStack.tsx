@@ -133,13 +133,7 @@ const Carousel = () => {
 
   return (
     <Flex align="start" p={4} direction="column" width="100%">
-      <Text
-        textAlign="center"
-        fontSize="4xl"
-        fontWeight="bold"
-        color="white"
-        mb={4}
-      >
+      <Text textAlign="center" fontSize="4xl" fontWeight="bold" mb={4}>
         Tech Stack
       </Text>
       <Tabs

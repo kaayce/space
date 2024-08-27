@@ -2,7 +2,7 @@ import { VStack } from '@chakra-ui/react';
 
 import Experience from '~/lib/components/Experience';
 import Hero from '~/lib/components/Hero';
-// import Projects from '~/lib/components/Projects';
+import Projects from '~/lib/components/Projects';
 import TechStack from '~/lib/components/TechStack';
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
       <Hero />
       <TechStack />
       <Experience />
-      {/* <Projects /> */}
+      <Projects />
     </VStack>
   );
 };
