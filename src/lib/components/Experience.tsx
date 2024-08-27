@@ -8,6 +8,7 @@ import {
   Text,
   useColorModeValue,
   Icon,
+  Flex,
 } from '@chakra-ui/react';
 import { FiExternalLink } from 'react-icons/fi';
 
@@ -21,41 +22,86 @@ type JobProps = {
   description: string;
   skills: string[];
 };
-
+const softEngineer = 'Software Engineer';
 const jobs: JobProps[] = [
   {
-    title: 'Senior Frontend Engineer',
-    company: 'Samsung',
-    period: '2024 - Present',
+    title: 'Senior Full Stack Developer',
+    company: 'Atimi',
+    period: 'Oct 2023 - July 2024',
     description:
-      'Aliquam erat volutpat. Cras at pharetra leo, nec molestie nisi. Proin eget ornare eros',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
+      'Developed proof-of-concepts and set up micro-frontends architecture. Created UI component libraries and integrated third-party APIs. Conducted interviews and developed coding standards and training programs.',
+    skills: ['TypeScript', 'React', 'React Query', 'Zustand', 'Java', 'Spring'],
   },
   {
-    title: 'Lead Engineer',
-    company: 'Microsoft',
-    period: '2018 - 2024',
+    title: 'Senior Software Engineer',
+    company: 'Dapper Labs',
+    period: 'Aug 2022 - Jul 2023',
     description:
-      'Aliquam erat volutpat. Cras at pharetra leo, nec molestie nisi. Proin eget ornare eros v',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
+      'Developed GraphQL CRUD services for web3 applications. Managed blockchain transactions and optimized CI/CD pipeline. Built high-traffic features and implemented ML-driven onboarding flows.',
+    skills: [
+      'Go',
+      'Node.js',
+      'TypeScript',
+      'React',
+      'Next.js',
+      'XState',
+      'GraphQL',
+    ],
   },
   {
-    title: 'Sr. UI/UX Engineer',
-    company: 'Apple',
-    period: '2016 - 2017',
+    title: 'Senior Frontend Developer',
+    company: 'SkipTheDishes',
+    period: 'Sep 2021 - Jul 2022',
     description:
-      'Aliquam erat volutpat. Cras at pharetra leo, nec molestie nisi. Proin eget ornare eros vivamus iaculis.',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
+      'Redesigned restaurant portal and migrated to micro-frontends. Enhanced testing suite and used functional programming with fp-ts. Conducted process experiments and mentored junior engineers.',
+    skills: [
+      'TypeScript',
+      'React',
+      'React Router',
+      'RTK Query',
+      'fp-ts',
+      'io-ts',
+    ],
   },
   {
-    title: 'Jr. UI/UX Designer',
-    company: 'Google',
-    period: '2016 - 2017',
+    title: softEngineer,
+    company: 'Playgon Games',
+    period: 'Oct 2019 - Aug 2021',
     description:
-      'Aliquam erat volutpat. Cras at pharetra leo, nec molestie nisi. Proin eget ornare eros vivamus iaculis.',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
+      'Developed UI and video streaming functionalities for mobile games. Implemented gameplay features and real-time video streaming. Created reusable UI components to improve development efficiency.',
+    skills: ['TypeScript', 'React', 'Redux', 'Konva.js', 'Node.js'],
+  },
+  {
+    title: softEngineer,
+    company: 'Ethnos',
+    period: 'Jan 2019 - Jul 2019',
+    description:
+      'Developed and maintained backend services using Node.js and Express.',
+    skills: ['Node.js', 'Express', 'React', 'Next.js', 'TypeScript'],
+  },
+  {
+    title: softEngineer,
+    company: 'Metzger',
+    period: 'Feb 2016 - Dec 2018',
+    description: 'Developed web applications using JavaScript and PostgreSQL.',
+    skills: ['JavaScript', 'PostgreSQL'],
   },
 ];
+
+const formatDescription = (description: string, txtColor: string) => {
+  const sentences = description.split('. ').filter(Boolean);
+  return (
+    <ul>
+      {sentences.map((sentence) => (
+        <li key={sentence.slice(0, 3)}>
+          <Text mt={2} color={txtColor}>
+            {sentence.trim()}.
+          </Text>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 const FiExternalLinkIcon = () => (
   <MotionBox
@@ -68,6 +114,7 @@ const FiExternalLinkIcon = () => (
     <Icon fontSize="sm" as={FiExternalLink} />
   </MotionBox>
 );
+
 const Job = ({ title, company, period, description, skills }: JobProps) => {
   const secondaryTextColor = useColorModeValue('gray.600', 'blue.300');
   const badgeColorScheme = useColorModeValue('green', 'blue');
@@ -86,17 +133,18 @@ const Job = ({ title, company, period, description, skills }: JobProps) => {
       <Text fontSize="sm" color={secondaryTextColor}>
         {period}
       </Text>
-      <Text fontSize="xl" fontWeight="bold">
-        {title}{' '}
+      <Box>
+        <Text as="span" fontSize="xl" fontWeight="bold">
+          {title}
+        </Text>{' '}
         <Text as="span" color={secondaryTextColor}>
           &#8226;
         </Text>{' '}
-        {company} <FiExternalLinkIcon />
-      </Text>
-
-      <Text mt={2} color={secondaryTextColor}>
-        {description}
-      </Text>
+        <Text as="span" fontSize="xl" fontWeight="bold">
+          {company} <FiExternalLinkIcon />
+        </Text>
+      </Box>
+      {formatDescription(description, secondaryTextColor)}
 
       <HStack spacing={2} mt={2}>
         {skills.map((skill) => (
@@ -114,16 +162,24 @@ const Job = ({ title, company, period, description, skills }: JobProps) => {
     </MotionBox>
   );
 };
-
 const Experience = () => {
   const linkColor = useColorModeValue('gray.600', 'blue.300');
 
   return (
-    <Box>
-      <VStack spacing={2}>
-        {jobs.map((job, index) => (
+    <Flex align="start" p={4} direction="column" width="100%">
+      <Text
+        textAlign="center"
+        fontSize="4xl"
+        fontWeight="bold"
+        color="white"
+        mb={4}
+      >
+        Experience
+      </Text>
+      <VStack spacing={2} mb={6} alignItems="start">
+        {jobs.map((job) => (
           <Job
-            key={index.toString() + 1}
+            key={job.company}
             title={job.title}
             company={job.company}
             period={job.period}
@@ -132,11 +188,16 @@ const Experience = () => {
           />
         ))}
       </VStack>
-      {/* TODO: comeback to fix */}
-      <Link href="/resume" color={linkColor} isExternal alignSelf="start">
+      <Link
+        href="/resume"
+        color={linkColor}
+        isExternal
+        alignSelf="start"
+        fontWeight="bold"
+      >
         View Full Resume <FiExternalLinkIcon />
       </Link>
-    </Box>
+    </Flex>
   );
 };
 
