@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Text, VStack, Flex, Hide } from '@chakra-ui/react';
+import Image from 'next/image';
 
 import Circle from '~/lib/components/Circle';
 import Contact from '~/lib/components/Contact';
 
 const Hero = () => {
   return (
-    <Flex align="start" p={4}>
+    <Flex align="start" p={4} position="relative">
       <Hide below="lg">
         <VStack>
           <Circle />
@@ -14,7 +15,23 @@ const Hero = () => {
         </VStack>
       </Hide>
       <Box width="1px" bg="gray.300" mr={6} alignSelf="stretch" />
-      <VStack align="start" spacing={4} fontSize={{ md: 'md', lg: 'lg' }}>
+      <VStack align="start" spacing={4} fontSize={{ md: 'md', lg: 'lg' }} p={1}>
+        <Box
+          position="absolute"
+          top={0}
+          right="0"
+          zIndex={-1}
+          overflow="hidden"
+        >
+          <Image
+            priority
+            src="/snike.svg"
+            alt="Background grid"
+            width={50}
+            height={50}
+            style={{ opacity: 0.7 }}
+          />
+        </Box>
         <Text fontStyle="italic">
           "I'm a versatile software engineer with over 7 years of experience in
           designing and implementing high-traffic, scalable web applications. My

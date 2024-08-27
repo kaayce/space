@@ -41,6 +41,16 @@ function NoNavTemplate({ children }: { children: ReactNode }): JSX.Element {
           style={{ opacity: 0.7 }}
         />
       </Box>
+      <Box position="absolute" top={0} left="35%" zIndex={-1} overflow="hidden">
+        <Image
+          priority
+          src="/slant-lines.svg"
+          alt="Background grid"
+          width={150}
+          height={150}
+          style={{ opacity: 0.7 }}
+        />
+      </Box>
     </Wrapper>
   );
 }

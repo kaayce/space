@@ -2,11 +2,11 @@ import {
   Box,
   Button,
   Heading,
-  Image,
   Text,
   Link as ChakraLink,
   Flex,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import MotionBox from '~/lib/components/motion/Box';

@@ -238,6 +238,16 @@ const Experience = () => {
 
   return (
     <Flex align="start" p={4} direction="column" width="100%">
+      <Box position="absolute" top={0} right={10} zIndex={-1} overflow="hidden">
+        <Image
+          priority
+          src="/semi.svg"
+          alt="Background grid"
+          width={50}
+          height={50}
+          style={{ opacity: 0.5 }}
+        />
+      </Box>
       <Text textAlign="center" fontSize="4xl" fontWeight="bold" mb={4}>
         Experience
       </Text>

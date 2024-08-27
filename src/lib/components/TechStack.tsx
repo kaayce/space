@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 import useEmblaCarousel from 'embla-carousel-react';
+import Image from 'next/image';
 import { useCallback, useState, useEffect } from 'react';
 import { DiJavascript1 } from 'react-icons/di';
 import {
@@ -132,7 +133,23 @@ const Carousel = () => {
   }, [emblaApi, currentSection]);
 
   return (
-    <Flex align="start" p={4} direction="column" width="100%">
+    <Flex
+      align="start"
+      p={4}
+      direction="column"
+      width="100%"
+      position="relative"
+    >
+      <Box position="absolute" top={0} right={0} zIndex={-1} overflow="hidden">
+        <Image
+          priority
+          src="/x.svg"
+          alt="Background grid"
+          width={50}
+          height={50}
+          style={{ opacity: 0.7 }}
+        />
+      </Box>
       <Text textAlign="center" fontSize="4xl" fontWeight="bold" mb={4}>
         Tech Stack
       </Text>

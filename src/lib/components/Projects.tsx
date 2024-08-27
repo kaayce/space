@@ -9,6 +9,7 @@ import {
   SimpleGrid,
   Flex,
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 
 type ProjectProps = {
@@ -77,7 +78,23 @@ const ProjectCard = ({ title, description, url }: ProjectProps) => {
 
 const Projects = () => {
   return (
-    <Flex align="start" p={4} direction="column" width="100%">
+    <Flex
+      align="start"
+      p={4}
+      direction="column"
+      width="100%"
+      position="relative"
+    >
+      <Box position="absolute" top={0} right={0} zIndex={-1} overflow="hidden">
+        <Image
+          priority
+          src="/lines.svg"
+          alt="Background grid"
+          width={50}
+          height={50}
+          style={{ opacity: 0.7 }}
+        />
+      </Box>
       <Text textAlign="center" fontSize="4xl" fontWeight="bold" mb={4}>
         Projects
       </Text>
