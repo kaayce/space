@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    url: 'https://kayce.space',
+    url: 'https://patricknzediegwu.com',
     title: 'Patrick Nzediegwu',
     description: 'My professional space',
     images: {
-      url: 'https://og-image.sznm.dev/**nextarter-chakra**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250',
-      alt: 'nextarter-chakra.sznm.dev og-image',
+      url: '/images/graph.png',
+      alt: 'patricknze og-image',
     },
   },
   twitter: {
