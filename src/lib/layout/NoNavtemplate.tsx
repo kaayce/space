@@ -20,6 +20,7 @@ const Wrapper = chakra(Box, {
 
 const ContentItem = chakra(MotionBox, {
   baseStyle: {
+    maxW: '1280px',
     px: { base: 4, md: 6, lg: 8 },
     flex: '1 1 auto',
   },
