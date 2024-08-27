@@ -160,7 +160,7 @@ const Carousel = () => {
           const sectionNames = Object.keys(sections) as SectionName[];
           setCurrentSection(sectionNames[index]);
         }}
-        variant="soft-rounded"
+        variant="solid-rounded"
         colorScheme="teal"
       >
         <TabList justifyContent="center" mb={4}>
