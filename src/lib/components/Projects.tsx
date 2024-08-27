@@ -103,14 +103,14 @@ const Projects = () => {
           <ProjectCard key={project.title} {...project} />
         ))}
       </SimpleGrid>
-      <Box textAlign="center" mt={8}>
+      {/* <Box textAlign="center" mt={8}>
         <Flex justify="center" align="center">
           <Link href="/projects" fontWeight="bold" fontSize="lg">
             See all
           </Link>
           <FiExternalLink style={{ marginLeft: '8px' }} />
         </Flex>
-      </Box>
+      </Box> */}
     </Flex>
   );
 };

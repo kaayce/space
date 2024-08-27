@@ -19,6 +19,7 @@ const customTheme = extendTheme({
   semanticTokens: {
     colors: {
       'chakra-body-bg': {
+        // TODO: fixme
         _dark: '#05051e',
         default: '#05051e',
         _light: '#05051e',
@@ -28,7 +29,8 @@ const customTheme = extendTheme({
       },
       'chakra-body-text': {
         _dark: '#fff',
-        _light: '#000',
+        _light: '#fff',
+        // _light: '#000',
       },
       // secondary: {
       //   default: '#009400',
