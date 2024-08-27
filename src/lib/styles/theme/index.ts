@@ -21,7 +21,7 @@ const customTheme = extendTheme({
       'chakra-body-bg': {
         _dark: '#05051e',
         default: '#05051e',
-        _light: '#fff',
+        _light: '#05051e',
         // f0fff0
         // _dark: '#05051e',
         // default: '#e6f6e6',
