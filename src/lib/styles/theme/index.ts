@@ -20,7 +20,10 @@ const customTheme = extendTheme({
     colors: {
       'chakra-body-bg': {
         _dark: '#05051e',
-        default: '#e6f6e6',
+        default: '#05051e',
+        _light: '#e6f6e6',
+        // _dark: '#05051e',
+        // default: '#e6f6e6',
       },
       'chakra-body-text': {
         _dark: '#fff',
