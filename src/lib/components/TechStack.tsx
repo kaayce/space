@@ -11,9 +11,9 @@ import {
   TabPanel,
   Tabs,
 } from '@chakra-ui/react';
-import Autoplay from 'embla-carousel-autoplay';
+import AutoScroll from 'embla-carousel-auto-scroll';
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { DiJavascript1 } from 'react-icons/di';
 import {
   FaReact,
@@ -39,7 +39,6 @@ import {
   SiGraphql,
   SiTerraform,
   SiPrometheus,
-  SiAmazonaws,
   SiPlaywright,
   SiJest,
   SiXstate,
@@ -57,48 +56,47 @@ interface CarouselProps {
 }
 
 const languages: CarouselProps[] = [
-  { label: 'Go', icon: <FaGolang size="40px" color="white" /> },
-  { label: 'JavaScript', icon: <DiJavascript1 size="40px" color="white" /> },
-  { label: 'TypeScript', icon: <SiTypescript size="40px" color="white" /> },
-  { label: 'Python', icon: <SiPython size="40px" color="white" /> },
-  { label: 'SQL', icon: <SiPostgresql size="40px" color="white" /> },
-  { label: 'HTML', icon: <FaNodeJs size="40px" color="white" /> },
-  { label: 'CSS', icon: <FaNodeJs size="40px" color="white" /> },
+  { label: 'Go', icon: <FaGolang size="40px" /> },
+  { label: 'JavaScript', icon: <DiJavascript1 size="40px" /> },
+  { label: 'TypeScript', icon: <SiTypescript size="40px" /> },
+  { label: 'Python', icon: <SiPython size="40px" /> },
+  { label: 'SQL', icon: <SiPostgresql size="40px" /> },
+  { label: 'HTML', icon: <SiTypescript size="40px" /> },
+  { label: 'CSS', icon: <SiTypescript size="40px" /> },
 ];
 
 const frontend: CarouselProps[] = [
-  { label: 'React', icon: <FaReact size="40px" color="white" /> },
-  { label: 'React Query', icon: <SiReactquery size="40px" color="white" /> },
-  { label: 'Redux', icon: <SiRedux size="40px" color="white" /> },
-  { label: 'Next.js', icon: <RiNextjsLine size="40px" color="white" /> },
-  { label: 'GraphQL', icon: <SiGraphql size="40px" color="white" /> },
-  { label: 'Apollo', icon: <SiApollographql size="40px" color="white" /> },
-  { label: 'XState', icon: <SiXstate size="40px" color="white" /> },
-  { label: 'PlayWright', icon: <SiPlaywright size="40px" color="white" /> },
-  { label: 'Jest', icon: <SiJest size="40px" color="white" /> },
+  { label: 'React', icon: <FaReact size="40px" /> },
+  { label: 'Query', icon: <SiReactquery size="40px" /> },
+  { label: 'Redux', icon: <SiRedux size="40px" /> },
+  { label: 'Next.js', icon: <RiNextjsLine size="40px" /> },
+  { label: 'GraphQL', icon: <SiGraphql size="40px" /> },
+  { label: 'Apollo', icon: <SiApollographql size="40px" /> },
+  { label: 'XState', icon: <SiXstate size="40px" /> },
+  { label: 'PlayWright', icon: <SiPlaywright size="40px" /> },
+  { label: 'Jest', icon: <SiJest size="40px" /> },
 ];
 
 const backend: CarouselProps[] = [
-  { label: 'Node.js', icon: <FaNodeJs size="40px" color="white" /> },
-  { label: 'Express', icon: <SiExpress size="40px" color="white" /> },
-  { label: 'Gin', icon: <SiGin size="40px" color="white" /> },
-  { label: 'Django', icon: <SiDjango size="40px" color="white" /> },
-  { label: 'Fastapi', icon: <SiFastapi size="40px" color="white" /> },
-  { label: 'Spring Boot', icon: <SiSpringboot size="40px" color="white" /> },
-  { label: 'Redis', icon: <SiRedis size="40px" color="white" /> },
-  { label: 'PostgreSQL', icon: <SiPostgresql size="40px" color="white" /> },
-  { label: 'MongoDB', icon: <SiMongodb size="40px" color="white" /> },
-  { label: 'MySQL', icon: <SiMysql size="40px" color="white" /> },
+  { label: 'Node.js', icon: <FaNodeJs size="40px" /> },
+  { label: 'Express', icon: <SiExpress size="40px" /> },
+  { label: 'Gin', icon: <SiGin size="40px" /> },
+  { label: 'Django', icon: <SiDjango size="40px" /> },
+  { label: 'Fastapi', icon: <SiFastapi size="40px" /> },
+  { label: 'Spring Boot', icon: <SiSpringboot size="40px" /> },
+  { label: 'Redis', icon: <SiRedis size="40px" /> },
+  { label: 'PostgreSQL', icon: <SiPostgresql size="40px" /> },
+  { label: 'MongoDB', icon: <SiMongodb size="40px" /> },
+  { label: 'MySQL', icon: <SiMysql size="40px" /> },
 ];
 
 const devOps: CarouselProps[] = [
-  { label: 'GitHub Actions', icon: <FaGithub size="40px" color="white" /> },
-  { label: 'Docker', icon: <FaDocker size="40px" color="white" /> },
-  { label: 'Kubernetes', icon: <SiKubernetes size="40px" color="white" /> },
-  { label: 'Terraform', icon: <SiTerraform size="40px" color="white" /> },
-  { label: 'Prometheus', icon: <SiPrometheus size="40px" color="white" /> },
-  { label: 'AWS', icon: <FaAws size="40px" color="white" /> },
-  { label: 'IAM', icon: <SiAmazonaws size="40px" color="white" /> },
+  { label: 'Actions', icon: <FaGithub size="40px" /> },
+  { label: 'Docker', icon: <FaDocker size="40px" /> },
+  { label: 'Kubernetes', icon: <SiKubernetes size="40px" /> },
+  { label: 'Terraform', icon: <SiTerraform size="40px" /> },
+  { label: 'Prometheus', icon: <SiPrometheus size="40px" /> },
+  { label: 'AWS', icon: <FaAws size="40px" /> },
 ];
 
 type SectionName = 'Languages' | 'Frontend' | 'Backend' | 'DevOps';
@@ -114,8 +112,8 @@ const Carousel = () => {
   const [currentSection, setCurrentSection] =
     useState<SectionName>('Languages');
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, dragFree: true, align: 'start' },
-    [Autoplay({ delay: 3000, stopOnInteraction: false })]
+    { loop: true, dragFree: true, align: 'center' },
+    [AutoScroll({ playOnInit: true, stopOnInteraction: true })]
   );
 
   const scrollPrev = useCallback(
@@ -127,7 +125,11 @@ const Carousel = () => {
     [emblaApi]
   );
 
-  const items = sections[currentSection];
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.reInit();
+    }
+  }, [emblaApi, currentSection]);
 
   return (
     <Flex align="start" p={4} direction="column" width="100%">
@@ -152,17 +154,19 @@ const Carousel = () => {
       >
         <TabList justifyContent="center" mb={4}>
           {Object.keys(sections).map((section) => (
-            <Tab key={section} color="white">
-              {section}
-            </Tab>
+            <Tab key={section}>{section}</Tab>
           ))}
         </TabList>
-        <TabPanels maxWidth="50em" mx="auto">
+        <TabPanels>
           {Object.keys(sections).map((section) => (
             <TabPanel key={section}>
               <Box position="relative" width="100%" overflow="hidden">
-                <Flex ref={emblaRef} className="embla__container">
-                  {items.map((item) => (
+                <Flex
+                  ref={emblaRef}
+                  className="embla__container"
+                  maxWidth={['30em', '50em']}
+                >
+                  {sections[section as SectionName].map((item) => (
                     <Box
                       key={item.label}
                       flexShrink={0}
@@ -181,9 +185,7 @@ const Carousel = () => {
                         mx="8px"
                       >
                         {item.icon}
-                        <Text mt={2} color="white">
-                          {item.label}
-                        </Text>
+                        <Text mt={2}>{item.label}</Text>
                       </Box>
                     </Box>
                   ))}
@@ -192,11 +194,10 @@ const Carousel = () => {
                   aria-label="Previous slide"
                   icon={<FaChevronLeft />}
                   position="absolute"
-                  top="50%"
+                  top="45%"
                   left="10px"
                   transform="translateY(-50%)"
                   onClick={scrollPrev}
-                  colorScheme="teal"
                   variant="solid"
                   borderRadius="full"
                 />
@@ -204,11 +205,10 @@ const Carousel = () => {
                   aria-label="Next slide"
                   icon={<FaChevronRight />}
                   position="absolute"
-                  top="50%"
+                  top="45%"
                   right="10px"
                   transform="translateY(-50%)"
                   onClick={scrollNext}
-                  colorScheme="teal"
                   variant="solid"
                   borderRadius="full"
                 />
