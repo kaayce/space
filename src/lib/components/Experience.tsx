@@ -22,7 +22,7 @@ type JobProps = {
   company: string;
   period: string;
   url: string;
-  imageUrl: string;
+  imageUrl?: string;
   description: string;
   skills: string[];
 };
@@ -37,7 +37,14 @@ const jobs: JobProps[] = [
     imageUrl: '/images/flagstar.webp',
     description:
       'Developed proof-of-concepts and set up micro-frontends architecture. Created UI component libraries and integrated third-party APIs. Conducted interviews and developed coding standards and training programs.',
-    skills: ['TypeScript', 'React', 'React Query', 'Zustand', 'Java', 'Spring'],
+    skills: [
+      'TypeScript',
+      'React',
+      'React Query',
+      'Zustand',
+      'Java',
+      'Spring Boot',
+    ],
   },
   {
     title: 'Senior Software Engineer',
@@ -82,7 +89,15 @@ const jobs: JobProps[] = [
     imageUrl: '/images/playgon.webp',
     description:
       'Developed UI and video streaming functionalities for mobile games. Implemented gameplay features and real-time video streaming. Created reusable UI components to improve development efficiency.',
-    skills: ['TypeScript', 'React', 'Redux', 'Konva.js', 'Node.js'],
+    skills: [
+      'TypeScript',
+      'React',
+      'Redux',
+      'Konva.js',
+      'Node.js',
+      'Java',
+      'Spring Boot',
+    ],
   },
   {
     title: softEngineer,
@@ -92,16 +107,15 @@ const jobs: JobProps[] = [
     imageUrl: '/images/ethnos.webp',
     description:
       'Developed and maintained backend services using Node.js and Express.',
-    skills: ['Node.js', 'Express', 'React', 'Next.js', 'TypeScript'],
+    skills: ['Node.js', 'Express', 'React', 'Next.js', 'TypeScript', 'Prisma'],
   },
   {
     title: softEngineer,
     company: 'Metzger',
-    imageUrl: '/images/ethnos.webp',
     url: 'https://www.atmetzger.com/',
     period: 'Feb 2016 - Dec 2018',
     description: 'Developed web applications using JavaScript and PostgreSQL.',
-    skills: ['JavaScript', 'PostgreSQL'],
+    skills: ['C#', 'ASP.NET', 'JavaScript', 'PostgreSQL'],
   },
 ];
 
@@ -242,7 +256,7 @@ const Experience = () => {
         ))}
       </VStack>
       <Link
-        href="/resume"
+        href="/resume/me.pdf"
         color={linkColor}
         isExternal
         alignSelf="start"
