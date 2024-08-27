@@ -166,9 +166,10 @@ const Job = ({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       _hover={{ bg: hoverBg }}
-      transition={{ enter: { duration: 0.1 } }}
+      transition={{ duration: 0.1 }}
       cursor="pointer"
       width="100%"
+      style={{ transform: 'translateZ(0)' }}
     >
       <Flex gap={16}>
         {imageUrl && (

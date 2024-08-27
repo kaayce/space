@@ -1,9 +1,12 @@
 import { CSSReset } from '@chakra-ui/react';
+// import { ColorModeScript, CSSReset } from '@chakra-ui/react';
 import type { Metadata, Viewport } from 'next';
+// import { Head } from 'next/document';
 
 import { inter } from '~/app/fonts';
 import Providers from '~/app/providers';
 import Layout from '~/lib/layout';
+// import customTheme from '~/lib/styles/theme/index';
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -47,6 +50,12 @@ export const viewport: Viewport = {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" className={inter.className}>
+      {/* <head>
+        <ColorModeScript
+          initialColorMode={customTheme.config?.initialColorMode}
+          type="cookie"
+        />
+      </head> */}
       <body>
         <Providers>
           <CSSReset />
