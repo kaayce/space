@@ -98,7 +98,7 @@ const Projects = () => {
       <Text textAlign="center" fontSize="4xl" fontWeight="bold" mb={4}>
         Projects
       </Text>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} px={[4, 8]}>
         {projects.map((project) => (
           <ProjectCard key={project.title} {...project} />
         ))}
