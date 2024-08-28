@@ -138,7 +138,7 @@ const FiExternalLinkIcon = () => (
   <MotionBox
     initial={{ transform: 'translateY(1px)' }}
     _hover={{ transform: 'translateY(-6px)' }}
-    transition={{ duration: 0.4 }}
+    transition={{ duration: 0.1 }}
     ml="1"
     display="inline-flex"
   >
@@ -160,13 +160,10 @@ const Job = ({
   const hoverBg = useColorModeValue('gray.100', 'blue.900');
 
   return (
-    <MotionBox
+    <Box
       p={4}
       borderRadius="md"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
       _hover={{ bg: hoverBg }}
-      transition={{ duration: 0.1 }}
       cursor="pointer"
       width="100%"
       style={{ transform: 'translateZ(0)' }}
@@ -229,7 +226,7 @@ const Job = ({
           </HStack>
         </Box>
       </Flex>
-    </MotionBox>
+    </Box>
   );
 };
 

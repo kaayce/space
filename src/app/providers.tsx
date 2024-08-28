@@ -7,11 +7,11 @@ import { Chakra as ChakraProvider } from '~/lib/components/Chakra';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
-    <CSPostHogProvider>
-      <CacheProvider>
-        <ChakraProvider>{children}</ChakraProvider>
-      </CacheProvider>
-    </CSPostHogProvider>
+    <CacheProvider>
+      <ChakraProvider>
+        <CSPostHogProvider>{children}</CSPostHogProvider>
+      </ChakraProvider>
+    </CacheProvider>
   );
 };
 
