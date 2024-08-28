@@ -1,5 +1,6 @@
 import { CSSReset } from '@chakra-ui/react';
 import type { Metadata, Viewport } from 'next';
+import Script from 'next/script';
 
 import { inter } from '~/app/fonts';
 import Providers from '~/app/providers';
@@ -13,7 +14,7 @@ const APP_NAME = 'Patrick Nzediegwu';
 
 export const metadata: Metadata = {
   title: { default: APP_NAME, template: '%s | Patrick Nzediegwu' },
-  description: 'My professional space',
+  description: 'Patrick Nzediegwu | FullStack Developer',
   applicationName: APP_NAME,
   appleWebApp: {
     capable: true,
@@ -60,7 +61,8 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           <CSSReset />
           <Layout>{children}</Layout>
         </Providers>
-        <script
+        <Script
+          id="microsoft-clarity"
           type="text/javascript"
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{

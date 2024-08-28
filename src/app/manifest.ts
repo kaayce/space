@@ -14,6 +14,7 @@ const manifest = (): MetadataRoute.Manifest => ({
     {
       src: '/favicon.ico',
       purpose: 'any',
+      type: 'image/x-icon',
       sizes: '48x48 72x72 96x96 128x128 256x256',
     },
   ],
