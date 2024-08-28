@@ -183,7 +183,6 @@ const Job = ({
             <Image
               src={imageUrl}
               alt={`${company} logo`}
-              objectFit="cover"
               width={150}
               height={150}
             />
