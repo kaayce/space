@@ -122,7 +122,7 @@ const jobs: JobProps[] = [
 const formatDescription = (description: string, txtColor: string) => {
   const sentences = description.split('. ').filter(Boolean);
   return (
-    <ul>
+    <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
       {sentences.map((sentence) => (
         <li key={sentence.slice(0, 3)}>
           <Text mt={2} color={txtColor}>
