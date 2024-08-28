@@ -15,7 +15,7 @@ const Hero = () => {
         </VStack>
       </Hide>
       <Box width="1px" bg="gray.300" mr={6} alignSelf="stretch" />
-      <VStack align="start" spacing={4} fontSize={{ md: 'md', lg: 'lg' }} p={1}>
+      <VStack align="start" spacing={4} fontSize="lg" p={1}>
         <Box
           position="absolute"
           top={0}

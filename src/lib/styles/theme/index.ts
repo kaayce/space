@@ -21,15 +21,14 @@ const customTheme = extendTheme({
       'chakra-body-bg': {
         // TODO: fixme
         _dark: '#05051e',
-        default: '#05051e',
-        _light: '#05051e',
+        default: '#fff',
         // f0fff0
         // _dark: '#05051e',
         // default: '#e6f6e6',
       },
       'chakra-body-text': {
         _dark: '#fff',
-        _light: '#fff',
+        _light: '#000',
         // _light: '#000',
       },
       // secondary: {
