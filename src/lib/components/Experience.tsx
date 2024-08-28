@@ -7,7 +7,7 @@ import {
   VStack,
   Text,
   useColorModeValue,
-  Icon,
+  // Icon,
   Flex,
   Center,
 } from '@chakra-ui/react';
@@ -15,7 +15,7 @@ import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 
 import Link from '~/lib/components/blocks/Link';
-import MotionBox from '~/lib/components/motion/Box';
+// import MotionBox from '~/lib/components/motion/Box';
 
 type JobProps = {
   title: string;
@@ -31,20 +31,13 @@ const softEngineer = 'Software Engineer';
 const jobs: JobProps[] = [
   {
     title: 'Senior Full Stack Developer',
-    company: 'Atimi',
+    company: 'Atimi Software',
     period: 'Oct 2023 - July 2024',
     url: 'https://www.flagstar.com/personal/borrow/home-loans/myloans.html',
     imageUrl: '/images/flagstar.webp',
     description:
-      'Developed proof-of-concepts and set up micro-frontends architecture. Created UI component libraries and integrated third-party APIs. Conducted interviews and developed coding standards and training programs.',
-    skills: [
-      'TypeScript',
-      'React',
-      'React Query',
-      'Zustand',
-      'Java',
-      'Spring Boot',
-    ],
+      'Developed proof-of-concepts, set up micro-frontends architecture. Leveraged MUI to create UI component libraries, hooks, and state stores. Conducted interviews and developed coding standards and training programs for new hires',
+    skills: ['TypeScript', 'React', 'React Query', 'Zustand'],
   },
   {
     title: 'Senior Software Engineer',
@@ -53,7 +46,7 @@ const jobs: JobProps[] = [
     url: 'https://nbatopshot.com/',
     imageUrl: '/images/nbatopshot.webp',
     description:
-      'Developed GraphQL CRUD services for web3 applications. Managed blockchain transactions and optimized CI/CD pipeline. Built high-traffic features and implemented ML-driven onboarding flows.',
+      'Developed GraphQL CRUD services for web3 gaming and digital collectibles. Managed blockchain transactions using XState, including wallet verification and token management. Built high-traffic features using Next.js, React, and GraphQL. Implemented machine learning-driven onboarding flows, increasing user conversions by 12%',
     skills: [
       'Go',
       'Node.js',
@@ -71,7 +64,7 @@ const jobs: JobProps[] = [
     url: 'https://www.skipthedishes.com/vancouver/restaurants',
     imageUrl: '/images/skip.webp',
     description:
-      'Redesigned restaurant portal and migrated to micro-frontends. Enhanced testing suite and used functional programming with fp-ts. Conducted process experiments and mentored junior engineers.',
+      'Shipped a redesigned restaurant portal serving over 20 million users. Migrated monolithic codebases to micro-frontends, boosting developer productivity by 40%. Upgraded the testing suite to use React Testing Library and utilized fp-ts for functional programming. Conducted process experiments and mentored engineers',
     skills: [
       'TypeScript',
       'React',
@@ -88,16 +81,8 @@ const jobs: JobProps[] = [
     url: 'https://fl.vegaslounge.live/?client_id=vegaslounge',
     imageUrl: '/images/playgon.webp',
     description:
-      'Developed UI and video streaming functionalities for mobile games. Implemented gameplay features and real-time video streaming. Created reusable UI components to improve development efficiency.',
-    skills: [
-      'TypeScript',
-      'React',
-      'Redux',
-      'Konva.js',
-      'Node.js',
-      'Java',
-      'Spring Boot',
-    ],
+      'Developed UI, animations, and video streaming functionalities for mobile and HTML5 casino games. Implemented gameplay features like baccarat roads, roulette wheel spin, and chip selection.  Developed real-time video streaming using WebRTC, enhancing video quality and bandwidth efficiency. Created a reusable UI breakpoint system, reducing new game creation time by 80 hours',
+    skills: ['TypeScript', 'React', 'Redux', 'Konva.js', 'Node.js'],
   },
   {
     title: softEngineer,
@@ -106,16 +91,18 @@ const jobs: JobProps[] = [
     url: 'https://ethnos.com.ng/',
     imageUrl: '/images/ethnos.webp',
     description:
-      'Developed and maintained backend services using Node.js and Express.',
+      'Developed and maintained backend services using Node.js and Express. Contributed to frontend development with React and Next.js',
     skills: ['Node.js', 'Express', 'React', 'Next.js', 'TypeScript', 'Prisma'],
   },
   {
     title: softEngineer,
     company: 'Metzger',
-    url: 'https://www.atmetzger.com/',
     period: 'Feb 2016 - Dec 2018',
-    description: 'Developed web applications using JavaScript and PostgreSQL.',
-    skills: ['C#', 'ASP.NET', 'JavaScript', 'PostgreSQL'],
+    url: 'https://www.atmetzger.com/',
+    imageUrl: '/images/metzger.webp',
+    description:
+      'Developed web applications using JavaScript and PostgreSQL. Built and maintained server-side applications and integrated frontend interfaces',
+    skills: ['JavaScript', 'PostgreSQL', 'C#', 'ASP.NET'],
   },
 ];
 
@@ -134,17 +121,17 @@ const formatDescription = (description: string, txtColor: string) => {
   );
 };
 
-const FiExternalLinkIcon = () => (
-  <MotionBox
-    initial={{ transform: 'translateY(1px)' }}
-    _hover={{ transform: 'translateY(-6px)' }}
-    transition={{ duration: 0.1 }}
-    ml="1"
-    display="inline-flex"
-  >
-    <Icon fontSize="sm" as={FiExternalLink} />
-  </MotionBox>
-);
+// const FiExternalLinkIcon = () => (
+//   <MotionBox
+//     initial={{ transform: 'translateY(1px)' }}
+//     _hover={{ transform: 'translateY(-6px)' }}
+//     transition={{ duration: 0.1 }}
+//     ml="1"
+//     display="inline-flex"
+//   >
+//     <Icon fontSize="sm" as={FiExternalLink} />
+//   </MotionBox>
+// );
 
 const Job = ({
   title,
@@ -231,7 +218,7 @@ const Job = ({
 };
 
 const Experience = () => {
-  const linkColor = useColorModeValue('gray.600', 'blue.300');
+  // const linkColor = useColorModeValue('gray.600', 'blue.300');
 
   return (
     <Flex align="start" p={4} direction="column" width="100%">
@@ -248,7 +235,7 @@ const Experience = () => {
       <Text textAlign="center" fontSize="4xl" fontWeight="bold" mb={4}>
         Experience
       </Text>
-      <VStack spacing={2} mb={6} m="auto" maxWidth={900}>
+      <VStack spacing={2} mb={6} m="auto" maxWidth={1000}>
         {jobs.map((job) => (
           <Job
             key={job.company}
@@ -262,7 +249,7 @@ const Experience = () => {
           />
         ))}
       </VStack>
-      <Link
+      {/* <Link
         href="/resume/me.pdf"
         color={linkColor}
         isExternal
@@ -270,7 +257,7 @@ const Experience = () => {
         fontWeight="bold"
       >
         View Full Resume <FiExternalLinkIcon />
-      </Link>
+      </Link> */}
     </Flex>
   );
 };
