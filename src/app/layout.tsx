@@ -1,6 +1,5 @@
 import { CSSReset } from '@chakra-ui/react';
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 
 import { inter } from '~/app/fonts';
 import Providers from '~/app/providers';
@@ -61,20 +60,6 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           <CSSReset />
           <Layout>{children}</Layout>
         </Providers>
-        <Script
-          id="microsoft-clarity"
-          type="text/javascript"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "nu5pcrh6c8");
-            `,
-          }}
-        />
       </body>
     </html>
   );

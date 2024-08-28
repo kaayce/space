@@ -12,4 +12,19 @@ module.exports = withPWA({
   eslint: {
     dirs: ['src'],
   },
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value:
+              "default-src 'self'; connect-src 'self' https://us.i.posthog.com; script-src 'self'; style-src 'self'; img-src 'self';",
+          },
+        ],
+      },
+    ];
+  },
 });
