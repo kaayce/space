@@ -1,5 +1,5 @@
 import { CSSReset } from '@chakra-ui/react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { inter } from '~/app/fonts';
 import Providers from '~/app/providers';
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
     creator: '@zenandvibes',
     card: 'summary_large_image',
   },
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  // viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
 };
 
-// export const viewport: Viewport = {
-//   width: 'device-width',
-// initialScale: 1,
-//   themeColor: '#FFFFFF',
-// };
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 0,
+  themeColor: '#FFFFFF',
+};
 
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
@@ -53,6 +53,19 @@ const RootLayout = ({ children }: RootLayoutProps) => {
           <CSSReset />
           <Layout>{children}</Layout>
         </Providers>
+        <script
+          type="text/javascript"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "nu5pcrh6c8");
+            `,
+          }}
+        />
       </body>
     </html>
   );
