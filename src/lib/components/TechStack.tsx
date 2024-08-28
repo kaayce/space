@@ -24,6 +24,8 @@ import {
   FaGithub,
   FaChevronLeft,
   FaChevronRight,
+  FaHtml5,
+  FaCss3Alt,
 } from 'react-icons/fa';
 import { FaGolang } from 'react-icons/fa6';
 import { RiNextjsLine } from 'react-icons/ri';
@@ -44,7 +46,8 @@ import {
   SiJest,
   SiXstate,
   SiMysql,
-  SiSpringboot,
+  // SiSpringboot,
+  // SiJava,
   SiFastapi,
   SiExpress,
   SiGin,
@@ -61,9 +64,10 @@ const languages: CarouselProps[] = [
   { label: 'JavaScript', icon: <DiJavascript1 size="40px" /> },
   { label: 'TypeScript', icon: <SiTypescript size="40px" /> },
   { label: 'Python', icon: <SiPython size="40px" /> },
+  // { label: 'Java', icon: <SiJava size="40px" /> },
   { label: 'SQL', icon: <SiPostgresql size="40px" /> },
-  { label: 'HTML', icon: <SiTypescript size="40px" /> },
-  { label: 'CSS', icon: <SiTypescript size="40px" /> },
+  { label: 'HTML', icon: <FaHtml5 size="40px" /> },
+  { label: 'CSS', icon: <FaCss3Alt size="40px" /> },
 ];
 
 const frontend: CarouselProps[] = [
@@ -84,7 +88,7 @@ const backend: CarouselProps[] = [
   { label: 'Gin', icon: <SiGin size="40px" /> },
   { label: 'Django', icon: <SiDjango size="40px" /> },
   { label: 'Fastapi', icon: <SiFastapi size="40px" /> },
-  { label: 'Spring Boot', icon: <SiSpringboot size="40px" /> },
+  // { label: 'Spring Boot', icon: <SiSpringboot size="40px" /> },
   { label: 'Redis', icon: <SiRedis size="40px" /> },
   { label: 'PostgreSQL', icon: <SiPostgresql size="40px" /> },
   { label: 'MongoDB', icon: <SiMongodb size="40px" /> },
@@ -113,7 +117,7 @@ const Carousel = () => {
   const [currentSection, setCurrentSection] =
     useState<SectionName>('Languages');
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, dragFree: true, align: 'center' },
+    { loop: true, dragFree: true, align: 'center', inViewThreshold: 0.9 },
     [AutoScroll({ playOnInit: true, stopOnInteraction: true })]
   );
 
@@ -140,7 +144,7 @@ const Carousel = () => {
       width="100%"
       position="relative"
     >
-      <Box position="absolute" top={0} right={0} zIndex={-1} overflow="hidden">
+      <Box position="absolute" top={0} right={0} zIndex={1} overflow="hidden">
         <Image
           priority
           src="/x.svg"
@@ -169,7 +173,7 @@ const Carousel = () => {
           ))}
         </TabList>
         <TabPanels>
-          {Object.keys(sections).map((section) => (
+          {Object.entries(sections).map(([section, items]) => (
             <TabPanel key={section}>
               <Box position="relative" width="100%" overflow="hidden">
                 <Flex
@@ -177,7 +181,7 @@ const Carousel = () => {
                   className="embla__container"
                   maxWidth={['30em', '50em']}
                 >
-                  {sections[section as SectionName].map((item) => (
+                  {items.map((item) => (
                     <Box
                       key={item.label}
                       flexShrink={0}
