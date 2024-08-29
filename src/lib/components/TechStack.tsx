@@ -117,7 +117,7 @@ const Carousel = () => {
   const [currentSection, setCurrentSection] =
     useState<SectionName>('Languages');
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, dragFree: true, align: 'center', inViewThreshold: 0.9 },
+    { loop: true, dragFree: true, align: 'start', inViewThreshold: 0.9 },
     [AutoScroll({ playOnInit: true, stopOnInteraction: true })]
   );
 
