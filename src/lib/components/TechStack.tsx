@@ -20,6 +20,7 @@ import {
   FaReact,
   FaNodeJs,
   FaAws,
+  FaJava,
   FaDocker,
   FaGithub,
   FaChevronLeft,
@@ -46,8 +47,8 @@ import {
   SiJest,
   SiXstate,
   SiMysql,
-  // SiSpringboot,
-  // SiJava,
+  SiSpringboot,
+  SiApachekafka,
   SiFastapi,
   SiExpress,
   SiGin,
@@ -64,7 +65,7 @@ const languages: CarouselProps[] = [
   { label: 'JavaScript', icon: <DiJavascript1 size="40px" /> },
   { label: 'TypeScript', icon: <SiTypescript size="40px" /> },
   { label: 'Python', icon: <SiPython size="40px" /> },
-  // { label: 'Java', icon: <SiJava size="40px" /> },
+  { label: 'Java', icon: <FaJava size="40px" /> },
   { label: 'SQL', icon: <SiPostgresql size="40px" /> },
   { label: 'HTML', icon: <FaHtml5 size="40px" /> },
   { label: 'CSS', icon: <FaCss3Alt size="40px" /> },
@@ -88,7 +89,8 @@ const backend: CarouselProps[] = [
   { label: 'Gin', icon: <SiGin size="40px" /> },
   { label: 'Django', icon: <SiDjango size="40px" /> },
   { label: 'Fastapi', icon: <SiFastapi size="40px" /> },
-  // { label: 'Spring Boot', icon: <SiSpringboot size="40px" /> },
+  { label: 'Spring Boot', icon: <SiSpringboot size="40px" /> },
+  { label: 'Kafka', icon: <SiApachekafka size="40px" /> },
   { label: 'Redis', icon: <SiRedis size="40px" /> },
   { label: 'PostgreSQL', icon: <SiPostgresql size="40px" /> },
   { label: 'MongoDB', icon: <SiMongodb size="40px" /> },
@@ -127,6 +129,7 @@ const Carousel = () => {
         playOnInit: true,
         stopOnInteraction: false,
         stopOnMouseEnter: true,
+        speed: 0.5,
       }),
     ]
   );
@@ -169,7 +172,7 @@ const Carousel = () => {
           alt="Background grid"
           width={50}
           height={50}
-          style={{ opacity: 0.7 }}
+          style={{ opacity: 0.7, width: '100%', height: 'auto' }}
         />
       </Box>
       <Text textAlign="center" fontSize="4xl" fontWeight="bold" mb={4}>

@@ -7,7 +7,6 @@ import {
   VStack,
   Text,
   useColorModeValue,
-  // Icon,
   Flex,
   Center,
 } from '@chakra-ui/react';
@@ -15,7 +14,6 @@ import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 
 import Link from '~/lib/components/blocks/Link';
-// import MotionBox from '~/lib/components/motion/Box';
 
 type JobProps = {
   title: string;
@@ -121,18 +119,6 @@ const formatDescription = (description: string, txtColor: string) => {
   );
 };
 
-// const FiExternalLinkIcon = () => (
-//   <MotionBox
-//     initial={{ transform: 'translateY(1px)' }}
-//     _hover={{ transform: 'translateY(-6px)' }}
-//     transition={{ duration: 0.1 }}
-//     ml="1"
-//     display="inline-flex"
-//   >
-//     <Icon fontSize="sm" as={FiExternalLink} />
-//   </MotionBox>
-// );
-
 const Job = ({
   title,
   company,
@@ -169,6 +155,7 @@ const Job = ({
               alt={`${company} logo`}
               width={150}
               height={150}
+              style={{ opacity: 0.7, width: '100%', height: 'auto' }}
             />
           </Center>
         )}

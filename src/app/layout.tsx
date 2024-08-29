@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next';
+import { cookies } from 'next/headers';
 
 import { inter } from '~/app/fonts';
 import Providers from '~/app/providers';
@@ -52,10 +53,11 @@ export const viewport: Viewport = {
 };
 
 const RootLayout = ({ children }: RootLayoutProps) => {
+  const cookieStore = cookies();
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
-        <Providers>
+        <Providers cookies={cookieStore.get('chakra-ui-color-mode')?.name}>
           <Layout>{children}</Layout>
         </Providers>
       </body>

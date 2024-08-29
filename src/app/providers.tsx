@@ -6,10 +6,16 @@ import { CSSReset } from '@chakra-ui/react';
 import CSPostHogProvider from '~/app/PostHogProvider';
 import { Chakra as ChakraProvider } from '~/lib/components/Chakra';
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+const Providers = ({
+  children,
+  cookies,
+}: {
+  children: React.ReactNode;
+  cookies?: string;
+}) => {
   return (
     <CacheProvider>
-      <ChakraProvider>
+      <ChakraProvider cookies={cookies}>
         <CSSReset />
         <CSPostHogProvider>{children}</CSPostHogProvider>
       </ChakraProvider>
