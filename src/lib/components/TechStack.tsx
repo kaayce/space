@@ -117,8 +117,18 @@ const Carousel = () => {
   const [currentSection, setCurrentSection] =
     useState<SectionName>('Languages');
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, dragFree: true, align: 'start', inViewThreshold: 0.9 },
-    [AutoScroll({ playOnInit: true, stopOnInteraction: true })]
+    {
+      loop: true,
+      align: 'start',
+      inViewThreshold: 0.7,
+    },
+    [
+      AutoScroll({
+        playOnInit: true,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true,
+      }),
+    ]
   );
 
   const scrollPrev = useCallback(
@@ -135,6 +145,14 @@ const Carousel = () => {
       emblaApi.reInit();
     }
   }, [emblaApi, currentSection]);
+
+  const getCarouselItems = (items: CarouselProps[]) => {
+    const MIN_ITEMS_FOR_LOOP = 8;
+    if (items.length < MIN_ITEMS_FOR_LOOP) {
+      return [...items, ...items];
+    }
+    return items;
+  };
 
   return (
     <Flex
@@ -175,15 +193,17 @@ const Carousel = () => {
         <TabPanels>
           {Object.entries(sections).map(([section, items]) => (
             <TabPanel key={section}>
-              <Box position="relative" width="100%" overflow="hidden">
-                <Flex
-                  ref={emblaRef}
-                  className="embla__container"
-                  maxWidth={['30em', '50em']}
-                >
-                  {items.map((item) => (
+              <Box
+                ref={emblaRef}
+                position="relative"
+                width="100%"
+                overflow="hidden"
+              >
+                <Flex className="embla__container" maxWidth={['30em', '50em']}>
+                  {getCarouselItems(items).map((item, index) => (
                     <Box
-                      key={item.label}
+                      // eslint-disable-next-line react/no-array-index-key
+                      key={item.label + index}
                       flexShrink={0}
                       minWidth="120px"
                       aspectRatio="1"
