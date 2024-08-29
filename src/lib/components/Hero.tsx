@@ -7,7 +7,12 @@ import Contact from '~/lib/components/Contact';
 
 const Hero = () => {
   return (
-    <Flex align="start" p={4} position="relative">
+    <Flex
+      align="start"
+      p={4}
+      position="relative"
+      flexDirection={{ lg: 'row', base: 'column' }}
+    >
       <Hide below="lg">
         <VStack>
           <Circle />
@@ -52,10 +57,12 @@ const Hero = () => {
             everyone can grow and succeed."
           </Text>
         </Hide>
-        {/* <Hide below="sm"> */}
-        {/* <Contact /> */}
-        {/* </Hide> */}
       </VStack>
+      <Hide above="md">
+        <Flex>
+          <Contact />
+        </Flex>
+      </Hide>
     </Flex>
   );
 };

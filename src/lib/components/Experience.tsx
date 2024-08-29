@@ -34,7 +34,7 @@ const jobs: JobProps[] = [
     url: 'https://www.flagstar.com/personal/borrow/home-loans/myloans.html',
     imageUrl: '/images/flagstar.webp',
     description:
-      'Developed proof-of-concepts, set up micro-frontends architecture. Leveraged MUI to create UI component libraries, hooks, and state stores. Conducted interviews and developed coding standards and training programs for new hires',
+      'Developed proof-of-concepts, migrated legacy React app to micro-frontends architecture. Fostered best practices to ensure code consistency, maintanability and reduce technical debt. Leveraged MUI to create UI component libraries, hooks, and state stores. Utilized React Hook Form to efficiently manage complex form states, validations, and submissions',
     skills: ['TypeScript', 'React', 'React Query', 'Zustand'],
   },
   {
