@@ -1,4 +1,3 @@
-import { CSSReset } from '@chakra-ui/react';
 import type { Metadata, Viewport } from 'next';
 
 import { inter } from '~/app/fonts';
@@ -57,7 +56,6 @@ const RootLayout = ({ children }: RootLayoutProps) => {
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body>
         <Providers>
-          <CSSReset />
           <Layout>{children}</Layout>
         </Providers>
       </body>
