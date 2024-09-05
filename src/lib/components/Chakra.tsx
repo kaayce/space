@@ -17,7 +17,7 @@ export const Chakra = ({ children, cookies }: ChakraProps) => {
   return (
     <>
       <ColorModeScript
-        initialColorMode={customTheme.config?.initialColorMode}
+        initialColorMode={'dark' || customTheme.config?.initialColorMode}
         type="cookie"
       />
       <ChakraProvider colorModeManager={colorModeManager} theme={customTheme}>
