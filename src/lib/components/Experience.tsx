@@ -26,16 +26,101 @@ type JobProps = {
 };
 
 const softEngineer = 'Software Engineer';
+// const jobs: JobProps[] = [
+//   {
+//     title: 'Senior Full Stack Developer',
+//     company: 'Atimi Software',
+//     period: 'Oct 2023 - July 2024',
+//     url: 'https://www.flagstar.com/personal/borrow/home-loans/myloans.html',
+//     imageUrl: '/images/flagstar.webp',
+//     description:
+//       'Developed proof-of-concepts, migrated legacy React app to micro-frontends architecture. Fostered best practices to ensure code consistency, maintanability and reduce technical debt. Leveraged MUI to create UI component libraries, hooks, and state stores. Utilized React Hook Form to efficiently manage complex form states, validations, and submissions',
+//     skills: ['TypeScript', 'React', 'React Query', 'Zustand'],
+//   },
+//   {
+//     title: 'Senior Software Engineer',
+//     company: 'Dapper Labs',
+//     period: 'Aug 2022 - Jul 2023',
+//     url: 'https://nbatopshot.com/',
+//     imageUrl: '/images/nbatopshot.webp',
+//     description:
+//       'Developed GraphQL CRUD services for web3 gaming and digital collectibles. Managed blockchain transactions using XState, including wallet verification and token management. Built high-traffic features using Next.js, React, and GraphQL. Implemented machine learning-driven onboarding flows, increasing user conversions by 12%',
+//     skills: [
+//       'Go',
+//       'Node.js',
+//       'TypeScript',
+//       'React',
+//       'Next.js',
+//       'XState',
+//       'GraphQL',
+//     ],
+//   },
+//   {
+//     title: 'Senior Frontend Developer',
+//     company: 'SkipTheDishes',
+//     period: 'Sep 2021 - Jul 2022',
+//     url: 'https://www.skipthedishes.com/vancouver/restaurants',
+//     imageUrl: '/images/skip.webp',
+//     description:
+//       'Shipped a redesigned restaurant portal serving over 20 million users. Migrated monolithic codebases to micro-frontends, boosting developer productivity by 40%. Upgraded the testing suite to use React Testing Library and utilized fp-ts for functional programming. Conducted process experiments and mentored engineers',
+//     skills: [
+//       'TypeScript',
+//       'React',
+//       'React Router',
+//       'RTK Query',
+//       'fp-ts',
+//       'io-ts',
+//     ],
+//   },
+//   {
+//     title: softEngineer,
+//     company: 'Playgon Games',
+//     period: 'Oct 2019 - Aug 2021',
+//     url: 'https://fl.vegaslounge.live/?client_id=vegaslounge',
+//     imageUrl: '/images/playgon.webp',
+//     description:
+//       'Developed UI, animations, and video streaming functionalities for mobile and HTML5 casino games. Implemented gameplay features like baccarat roads, roulette wheel spin, and chip selection.  Developed real-time video streaming using WebRTC, enhancing video quality and bandwidth efficiency. Created a reusable UI breakpoint system, reducing new game creation time by 80 hours',
+//     skills: ['TypeScript', 'React', 'Redux', 'Konva.js', 'Node.js'],
+//   },
+//   {
+//     title: softEngineer,
+//     company: 'Ethnos',
+//     period: 'Jan 2019 - Jul 2019',
+//     url: 'https://ethnos.com.ng/',
+//     imageUrl: '/images/ethnos.webp',
+//     description:
+//       'Developed and maintained backend services using Node.js and Express. Contributed to frontend development with React and Next.js',
+//     skills: ['Node.js', 'Express', 'React', 'Next.js', 'TypeScript', 'Prisma'],
+//   },
+//   {
+//     title: softEngineer,
+//     company: 'Metzger',
+//     period: 'Feb 2016 - Dec 2018',
+//     url: 'https://www.atmetzger.com/',
+//     imageUrl: '/images/metzger.webp',
+//     description:
+//       'Developed web applications using JavaScript and PostgreSQL. Built and maintained server-side applications and integrated frontend interfaces',
+//     skills: ['JavaScript', 'PostgreSQL', 'C#', 'ASP.NET'],
+//   },
+// ];
+
 const jobs: JobProps[] = [
   {
     title: 'Senior Full Stack Developer',
     company: 'Atimi Software',
-    period: 'Oct 2023 - July 2024',
+    period: 'Oct 2023 - Present',
     url: 'https://www.flagstar.com/personal/borrow/home-loans/myloans.html',
     imageUrl: '/images/flagstar.webp',
     description:
       'Developed proof-of-concepts, migrated legacy React app to micro-frontends architecture. Fostered best practices to ensure code consistency, maintanability and reduce technical debt. Leveraged MUI to create UI component libraries, hooks, and state stores. Utilized React Hook Form to efficiently manage complex form states, validations, and submissions',
-    skills: ['TypeScript', 'React', 'React Query', 'Zustand'],
+    skills: [
+      'TypeScript',
+      'React',
+      'React Query',
+      'Zustand',
+      'Java',
+      'Spring Boot',
+    ],
   },
   {
     title: 'Senior Software Engineer',
@@ -58,7 +143,7 @@ const jobs: JobProps[] = [
   {
     title: 'Senior Frontend Developer',
     company: 'SkipTheDishes',
-    period: 'Sep 2021 - Jul 2022',
+    period: 'Jan 2019 - Jul 2022',
     url: 'https://www.skipthedishes.com/vancouver/restaurants',
     imageUrl: '/images/skip.webp',
     description:
@@ -74,33 +159,22 @@ const jobs: JobProps[] = [
   },
   {
     title: softEngineer,
-    company: 'Playgon Games',
-    period: 'Oct 2019 - Aug 2021',
-    url: 'https://fl.vegaslounge.live/?client_id=vegaslounge',
-    imageUrl: '/images/playgon.webp',
-    description:
-      'Developed UI, animations, and video streaming functionalities for mobile and HTML5 casino games. Implemented gameplay features like baccarat roads, roulette wheel spin, and chip selection.  Developed real-time video streaming using WebRTC, enhancing video quality and bandwidth efficiency. Created a reusable UI breakpoint system, reducing new game creation time by 80 hours',
-    skills: ['TypeScript', 'React', 'Redux', 'Konva.js', 'Node.js'],
-  },
-  {
-    title: softEngineer,
     company: 'Ethnos',
-    period: 'Jan 2019 - Jul 2019',
+    period: 'Jan 2016 - Dec 2018',
     url: 'https://ethnos.com.ng/',
     imageUrl: '/images/ethnos.webp',
     description:
-      'Developed and maintained backend services using Node.js and Express. Contributed to frontend development with React and Next.js',
-    skills: ['Node.js', 'Express', 'React', 'Next.js', 'TypeScript', 'Prisma'],
-  },
-  {
-    title: softEngineer,
-    company: 'Metzger',
-    period: 'Feb 2016 - Dec 2018',
-    url: 'https://www.atmetzger.com/',
-    imageUrl: '/images/metzger.webp',
-    description:
-      'Developed web applications using JavaScript and PostgreSQL. Built and maintained server-side applications and integrated frontend interfaces',
-    skills: ['JavaScript', 'PostgreSQL', 'C#', 'ASP.NET'],
+      'Developed UI, animations, and video streaming functionalities for mobile and HTML5 casino games. Implemented gameplay features like baccarat roads, roulette wheel spin, and chip selection.  Developed real-time video streaming using WebRTC, enhancing video quality and bandwidth efficiency. Created a reusable UI breakpoint system, reducing new game creation time by 80 hours',
+    skills: [
+      'Node.js',
+      'Express',
+      'React',
+      'Redux',
+      'Konva.js',
+      'Next.js',
+      'TypeScript',
+      'Prisma',
+    ],
   },
 ];
 
