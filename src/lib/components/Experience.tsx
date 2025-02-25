@@ -143,7 +143,7 @@ const jobs: JobProps[] = [
   {
     title: 'Senior Frontend Developer',
     company: 'SkipTheDishes',
-    period: 'Jan 2019 - Jul 2022',
+    period: 'Aug 2021 - Jul 2022',
     url: 'https://www.skipthedishes.com/vancouver/restaurants',
     imageUrl: '/images/skip.webp',
     description:
@@ -161,7 +161,7 @@ const jobs: JobProps[] = [
     title: softEngineer,
     company: 'Ethnos',
     period: 'Jan 2016 - Dec 2018',
-    url: 'https://ethnos.com.ng/',
+    url: 'https://ethnoscyber.com/',
     imageUrl: '/images/ethnos.webp',
     description:
       'Developed UI, animations, and video streaming functionalities for mobile and HTML5 casino games. Implemented gameplay features like baccarat roads, roulette wheel spin, and chip selection.  Developed real-time video streaming using WebRTC, enhancing video quality and bandwidth efficiency. Created a reusable UI breakpoint system, reducing new game creation time by 80 hours',
@@ -175,6 +175,35 @@ const jobs: JobProps[] = [
       'TypeScript',
       'Prisma',
     ],
+  },
+  {
+    title: softEngineer,
+    company: 'Playgon Games',
+    period: 'Oct 2019 - Aug 2021',
+    url: 'https://www.playgon.com/',
+    imageUrl: '/images/playgon.webp',
+    description:
+      'Developed UI, animations, and video streaming functionalities for mobile and HTML5 casino games. Implemented gameplay features like baccarat roads, roulette wheel spin, and chip selection.  Developed real-time video streaming using WebRTC, enhancing video quality and bandwidth efficiency. Created a reusable UI breakpoint system, reducing new game creation time by 80 hours',
+    skills: [
+      'Node.js',
+      'Express',
+      'React',
+      'Redux',
+      'Konva.js',
+      'Next.js',
+      'TypeScript',
+      'Prisma',
+    ],
+  },
+  {
+    title: softEngineer,
+    company: 'Ethnos',
+    period: 'Feb 2019 - Aug 2019',
+    url: 'https://ethnos.com.ng/',
+    imageUrl: '/images/ethnos.webp',
+    description:
+      'Developed and maintained backend services using Node.js and Express. Contributed to frontend development with React and Next.js',
+    skills: ['Node.js', 'Express', 'React', 'Next.js', 'TypeScript', 'Prisma'],
   },
 ];
 
